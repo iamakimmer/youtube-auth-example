@@ -16,6 +16,7 @@
 
 <script type="text/javascript">
        function start() {
+        var query = window.prompt('what do you want to search for?')
         // Initializes the client with the API key and the Translate API.
         gapi.client.init({
           'apiKey': 'AIzaSyCm2o_sd86Z6edMeA-6zYRO0zP0To6vHZM',
@@ -24,7 +25,7 @@
           // Executes an API request, and returns a Promise.
           // The method name `language.translations.list` comes from the API discovery.
            var request = gapi.client.youtube.search.list({
-            q: 'javascript',
+            q: query,
             part: 'snippet'
             });
            return request;
